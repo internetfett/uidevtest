@@ -28,6 +28,27 @@
                 <div class="updated">Updated: {{updated}}</div>
             </article>
         </script>
+        
+        <script id="storyItem" type="text/template">
+            <article>
+                <div id="breadcrumbs"></div>
+                <div id="date-strip">Updated: {{updated}} | Posted: {{pub_date}}</div>
+                <h1>{{title}}</h1>
+                <div id="share-buttons">
+                    <a href="">Comment</a>
+                    <a href="">Share</a>
+                    <a href="">Favorite</a>
+                    <a href="">Vote</a>
+                </div>
+                <div id="lead-photo">
+                    <img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
+                    <p id="lead-photo-credit">{{lead_photo_credit}}</p>
+                    <p id="lead-photo-caption">{{lead_photo_caption}}</p>
+                </div>
+                <p id="byline">By {{#author}}<span>{{.}}</span>{{/author}}</p>
+                <div id="story-wrap">{{{story}}}</div>
+            </article>
+        </script>
 
         <script src="../js/jquery-1.8.0.min.js"></script>
         <script src="../js/dateFormat.min.js"></script>
