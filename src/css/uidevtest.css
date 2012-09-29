@@ -30,15 +30,18 @@ a:visited {
 * Layout
 */
 
-#content {
+#wrapper {
     margin: auto;
-    max-width: 810px;
-    padding: 15px;
+    max-width: 840px;
     width: 100%;
 }
 
+#content {
+    padding: 15px;
+}
+
 /* ==========================================================================
-Story List View
+Story List View - All layouts
 ========================================================================== */
 
 /*
@@ -100,8 +103,223 @@ article {
 }
 
 /* ==========================================================================
-Story View
+Story View - All layouts
 ========================================================================== */
+
+/*
+* Typography
+*/
+
+#breadcrumbs {
+    color: #036DBE;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 11px;
+    text-transform: uppercase;
+}
+
+#date-strip {
+    font-size: 11px;
+}
+
+#headline {
+    font-size: 24px;
+}
+
+#social a {
+    font-size: 11px;
+    line-height: 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+#lead-photo,
+#lead-photo-caption {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#story {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/*
+* Sprites
+*/
+
+#social a:before {
+    background: url(../images/uidevtest-sprites.png) repeat-x;
+    content: "";
+    display: block;
+    float: left;
+    height: 20px;
+    margin: 0 3px 0 0;
+    width: 20px;
+}
+
+#social .comment:before {
+    background-position: 0 0;
+}
+
+#social .share:before {
+    background-position: 60px 0;
+}
+
+#social .favorite:before {
+    background-position: 40px 0;
+}
+
+#social .vote:before {
+    background-position: 20px 0;
+}
+
+/*
+* Layout
+*/
+
+#breadcrumbs {
+    border-bottom: 2px solid #CDCDCD;
+    border-top: 2px solid #CDCDCD;
+    padding: 5px 0 5px 10px;
+}
+
+#date-strip {
+    margin: 10px 0 0;
+}
+
+#headline {
+    margin: 5px 0 0;
+}
+
+#social {
+    margin: 0 0 10px 0;
+}
+
+#social a {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+#lead-photo-box {
+    margin: 0 0 15px 0;
+}
+
+#byline span:after {
+    content: ", ";
+    display: inline;
+}
+
+#byline span:last-child:after {
+    content: "";
+}
+
+/* ==========================================================================
+Story View - Single-column
+========================================================================== */
+
+@media screen and (max-width: 480px) {
+    #lead-photo {
+        float: left;
+        margin: 10px 0 0;
+    }
+    
+    #lead-photo-credit {
+        color: #898989;
+        margin: 8px 0;
+        text-align: right;
+    }
+    
+    #lead-photo-caption {
+        clear: both;
+    }
+}
+
+/* ==========================================================================
+Story View - Three-column
+========================================================================== */
+
+@media screen and (min-width: 481px) {
+    #wrapper {
+        min-width: 840px;
+    }
+
+    #story-before {
+        display: table;
+        margin: 5px 0 7px;
+    }
+    
+    #headline {
+        display: table-header-group;
+        width: 100%;
+    }
+    
+    #date-strip {
+        display: table-row-group;
+        width: 100%;
+    }
+    
+    #social {
+        position: absolute;
+        left: 275px;
+    }
+    
+    #social a:before {
+        background-image: url(../images/uidevtest-sprites-grayscale.png);
+    }
+    
+    #social a:hover:before {
+        background-image: url(../images/uidevtest-sprites.png);
+    }
+    
+    #lead-photo-box {
+        float: left;
+        margin: 0 15px 0 0;
+    }
+    
+    #lead-photo {
+        position: relative;
+        max-width: 260px;
+    }
+    
+    #lead-photo img {
+        border: 2px solid #000;
+        width: 256px;
+    }
+    
+    #lead-photo-credit {
+        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.6);
+        color: #000;
+        padding: 3px;
+        position: absolute;
+            bottom: 2px;
+            right: 2px;
+    }
+    
+    #lead-photo-caption {
+        margin: 10px 0;
+        width: 260px;
+    }
+    
+    #story {
+        margin: 0 0 0 275px;
+        padding: 30px 0 0;
+    }
+    
+    #story-body {
+        column-count: 2;
+        column-cap: 15px;
+        column-rule: none;
+        -moz-column-count: 2;
+        -moz-column-gap: 15px;
+        -moz-column-rule: none;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 15px;
+        -webkit-column-rule: none;
+    }
+
+}
 
 /*
 * HTML5 Boilerplate

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>UIDevTest</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="../css/normalize.css">
@@ -31,22 +31,32 @@
         
         <script id="storyItem" type="text/template">
             <article>
-                <div id="breadcrumbs"></div>
-                <div id="date-strip">Updated: {{updated}} | Posted: {{pub_date}}</div>
-                <h1>{{title}}</h1>
-                <div id="share-buttons">
-                    <a href="">Comment</a>
-                    <a href="">Share</a>
-                    <a href="">Favorite</a>
-                    <a href="">Vote</a>
+                <div id="breadcrumbs">
+                    <a href="#">Home</a> &gt; <a href="index.html">News</a>
                 </div>
-                <div id="lead-photo">
-                    <img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
-                    <p id="lead-photo-credit">{{lead_photo_credit}}</p>
-                    <p id="lead-photo-caption">{{lead_photo_caption}}</p>
+                <div id="story-before">
+                    <div id="date-strip">Updated: {{updated}} | Posted: {{pub_date}}</div>
+                    <h1 id="headline">{{title}}</h1>
                 </div>
-                <p id="byline">By {{#author}}<span>{{.}}</span>{{/author}}</p>
-                <div id="story-wrap">{{{story}}}</div>
+                <div id="story-content">
+                    <div id="social">
+                        <a href="#" class="comment">Comment</a>
+                        <a href="#" class="share">Share</a>
+                        <a href="#" class="favorite">Favorite</a>
+                        <a href="#" class="vote">Vote</a>
+                    </div>
+                    <div id="lead-photo-box">
+                        <div id="lead-photo">
+                            <img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
+                            <div id="lead-photo-credit">{{lead_photo_credit}}</div>
+                        </div>
+                        <div id="lead-photo-caption">{{lead_photo_caption}}</div>
+                    </div>
+                    <div id="story">
+                        <div id="byline">By {{#author}}<span><a href="#">{{.}}</a></span>{{/author}}</div>
+                        <div id="story-body">{{{story}}}</div>
+                    </div>
+                </div>
             </article>
         </script>
 
